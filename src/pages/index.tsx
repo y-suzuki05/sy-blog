@@ -2,6 +2,7 @@ import { client } from "@/libs/client";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
+import { Layout } from "@/components/layout";
 
 export type Blog = {
   title: string;
@@ -12,21 +13,20 @@ type Props = MicroCMSListResponse<Blog>;
 
 const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   return (
-    <div>
-      <p>テストブログ</p>
-      <p>{`記事の総数：${props.totalCount}件`}</p>
-      <ul>
-        {props.contents.map((content) => {
-          return (
-            <li key={content.id}>
-              <Link href={`/blog/${content.id}`}>
-                {content.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <Layout>
+      <div>
+        <p>{`記事の総数：${props.totalCount}件`}</p>
+        <ul>
+          {props.contents.map((content) => {
+            return (
+              <li key={content.id}>
+                <Link href={`/blog/${content.id}`}>{content.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </Layout>
   );
 };
 
