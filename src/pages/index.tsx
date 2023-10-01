@@ -3,6 +3,7 @@ import { MicroCMSListResponse } from "microcms-js-sdk";
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { Layout } from "@/components/layout";
+import { Box } from "@chakra-ui/react";
 
 export type Blog = {
   title: string;
@@ -26,6 +27,7 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
           })}
         </ul>
       </div>
+      <Box h={'10000px'}>aaa</Box>
     </Layout>
   );
 };
