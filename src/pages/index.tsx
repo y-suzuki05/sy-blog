@@ -13,6 +13,7 @@ type Props = MicroCMSListResponse<Blog>;
 const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   return (
     <div>
+      <p>テストブログ</p>
       <p>{`記事の総数：${props.totalCount}件`}</p>
       <ul>
         {props.contents.map((content) => {
