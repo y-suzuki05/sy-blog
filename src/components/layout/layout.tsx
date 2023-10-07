@@ -9,7 +9,14 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <Box pt={'3.875rem'}>{children}</Box>
+      <Box
+        pt={"3.875rem"}
+        w={{ base: "100%", md: "70rem" }}
+        m={"auto"}
+        h={"100%"}
+      >
+        {children}
+      </Box>
     </>
   );
 };
