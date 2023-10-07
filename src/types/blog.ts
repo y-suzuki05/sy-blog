@@ -6,4 +6,5 @@ export type Blog = {
     height: number;
     width: number;
   };
+  author: string;
 };
