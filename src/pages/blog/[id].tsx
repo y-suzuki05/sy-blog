@@ -1,6 +1,6 @@
 import { client } from "@/libs/client";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Blog } from "..";
+import { Blog } from "@/types/blog";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import dayjs from "dayjs";
 
@@ -10,7 +10,9 @@ const BlogId: NextPage<Props> = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <time dateTime={props.publishedAt}>{dayjs(props.publishedAt).format("YYYY年MM月DD日")}</time>
+      <time dateTime={props.publishedAt}>
+        {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
+      </time>
       <article dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
   );

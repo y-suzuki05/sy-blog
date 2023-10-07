@@ -1,0 +1,1 @@
+export { Top } from '@/components/top/top'
