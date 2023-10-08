@@ -1,8 +1,9 @@
 import { Blog } from "@/types/blog";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import Link from "next/link";
-import { Box, Flex, HStack, Heading } from "@chakra-ui/react";
+import { Box, Flex, HStack, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { formatPublishedDate } from "@/utils";
 
 type TopProps = {
   blogData: MicroCMSListResponse<Blog>;
@@ -18,7 +19,7 @@ export const Top = ({ blogData }: TopProps) => {
         {blogData.contents.map((content) => {
           return (
             <Box key={content.id}>
-              <Flex>
+              <Flex gap={8}>
                 <Link href={`/blog/${content.id}`}>
                   <Image
                     src={content.eyecatch.url}
@@ -28,10 +29,15 @@ export const Top = ({ blogData }: TopProps) => {
                   />
                 </Link>
                 <Box>
-                  <Link href={`/blog/${content.id}`}>{content.title}</Link>
-                  <Flex>
+                  <Link href={`/blog/${content.id}`}>
+                    <Text fontSize={16} fontWeight={700}>
+                      {content.title}
+                    </Text>
+                  </Link>
+                  <Flex mt={"0.375rem"} fontSize={12}>
                     {content.author}
-                    {content.publishedAt}
+                    {content.publishedAt &&
+                      formatPublishedDate(content.publishedAt)}
                   </Flex>
                 </Box>
               </Flex>

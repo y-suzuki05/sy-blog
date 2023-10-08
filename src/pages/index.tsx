@@ -11,7 +11,6 @@ const Home: NextPage<MicroCMSListResponse<Blog>> = (props) => {
   return (
     <Layout>
       <Top blogData={props} />
-      {/* {props.contents[2].eyecatch.url} */}
     </Layout>
   );
 };
