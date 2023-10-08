@@ -10,7 +10,6 @@ import dayjs from "dayjs";
  */
 export const formatPublishedDate = (publishedAt: string) => {
   const diff = dayjs().diff(dayjs(publishedAt), "d");
-  console.log(diff);
   if (diff < 1 || diff > 7) {
     return dayjs(publishedAt).format("YYYY年MM月DD日");
   } else {
