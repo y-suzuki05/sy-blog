@@ -22,12 +22,12 @@ export const Top = ({ blogData }: TopProps) => {
               <Link href={`/blog/${content.id}`}>
                 <Image
                   src={content.eyecatch.url}
-                  width={90}
-                  height={90}
+                  width={150}
+                  height={150}
                   alt="アイキャッチ"
                 />
               </Link>
-              <Box>
+              <Box maxW={'18.75rem'}>
                 <Link href={`/blog/${content.id}`}>
                   <Text fontSize={16} fontWeight={700}>
                     {content.title}
