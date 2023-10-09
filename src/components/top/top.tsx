@@ -27,7 +27,7 @@ export const Top = ({ blogData }: TopProps) => {
                   alt="アイキャッチ"
                 />
               </Link>
-              <Box maxW={'18.75rem'}>
+              <Box maxW={"18.75rem"}>
                 <Link href={`/blog/${content.id}`}>
                   <Text fontSize={16} fontWeight={700}>
                     {content.title}

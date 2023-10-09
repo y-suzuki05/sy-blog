@@ -1,5 +1,6 @@
 import { Header } from "@/components/navigation/header";
 import { Box } from "@chakra-ui/react";
+import { Footer } from "@/components/navigation/footer";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export const Layout = ({ children }: LayoutProps) => {
       >
         {children}
       </Box>
+      <Footer />
     </>
   );
 };

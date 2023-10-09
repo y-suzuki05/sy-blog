@@ -3,18 +3,19 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Blog } from "@/types/blog";
 import { MicroCMSContentId, MicroCMSDate } from "microcms-js-sdk";
 import dayjs from "dayjs";
+import { Layout } from "@/components/layout";
 
 type Props = Blog & MicroCMSContentId & MicroCMSDate;
 
 const BlogId: NextPage<Props> = (props) => {
   return (
-    <div>
+    <Layout>
       <h1>{props.title}</h1>
       <time dateTime={props.publishedAt}>
         {dayjs(props.publishedAt).format("YYYY年MM月DD日")}
       </time>
       <article dangerouslySetInnerHTML={{ __html: props.content }} />
-    </div>
+    </Layout>
   );
 };
 

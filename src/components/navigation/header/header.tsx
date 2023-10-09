@@ -9,7 +9,6 @@ export const Header = () => {
       bg={"white"}
       position={"fixed"}
       w={"100%"}
-      zIndex={"sticky"}
     >
       <Flex
         justifyContent={"space-between"}
